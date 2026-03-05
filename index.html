@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xienia Powell | Cloud & DevOps Professional</title>
+    <meta name="description" content="Professional Cloud & DevOps Portfolio of Xienia Powell - Specialized in AWS, Terraform, and HIPAA Compliance.">
+    
+    <!-- Tailwind CSS for high-end styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        :root {
+            --bg-dark: #020617;
+            --accent-blue: #3b82f6;
+        }
+
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-dark);
+            color: #f8fafc;
+        }
+
+        .bg-grid {
+            background-image: radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.08) 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+
+        .hero-glow {
+            background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+        }
+
+        .reveal { 
+            opacity: 0; 
+            transform: translateY(30px); 
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1); 
+        }
+        .reveal.active { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+
+        .btn-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px -10px rgba(59, 130, 246, 0.4);
+        }
+
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(30, 41, 59, 1);
+            transition: all 0.4s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+            background: rgba(15, 23, 42, 0.8);
+        }
+
+        .arch-node:hover { 
+            stroke: #3b82f6; 
+            stroke-width: 2px; 
+            filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5)); 
+            transition: all 0.3s; 
+        }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-grid">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-900">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-2xl font-black text-white group cursor-pointer">
+                XP<span class="text-blue-500 group-hover:animate-pulse">.</span>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-10 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">
+                <a href="#skills" class="hover:text-blue-400 transition-colors text-white">Technical Stack</a>
+                <a href="#projects" class="hover:text-blue-400 transition-colors text-white">CloudVault</a>
+                <a href="#experience" class="hover:text-blue-400 transition-colors text-white">Experience</a>
+                <a href="#contact" class="px-5 py-2 border border-blue-500/30 rounded-full text-blue-400 hover:bg-blue-500 hover:text-white transition-all">Contact</a>
+                <a href="#" target="_blank" class="flex items-center gap-2 text-white hover:text-blue-400 transition-colors border-b-2 border-blue-500 pb-0.5">
+                    <i data-lucide="file-text" class="w-4 h-4"></i> Resume
+                </a>
+            </div>
+            
+            <div class="md:hidden text-slate-400">
+                <i data-lucide="menu" class="cursor-pointer" id="menu-toggle"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-24 pb-16 px-6 overflow-hidden min-h-[85vh] flex items-center">
+        <div class="absolute inset-0 hero-glow pointer-events-none"></div>
+        <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-20 relative z-10 w-full">
+            <div class="flex-1 space-y-8">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest">
+                    Available for High-Level Engineering Roles
+                </div>
+                
+                <h1 class="text-6xl md:text-8xl font-black leading-[0.9] text-white tracking-tighter">
+                    Business Mind.<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-500">
+                        Cloud Vision.
+                    </span>
+                </h1>
+                
+                <p class="text-xl text-slate-400 max-w-xl leading-relaxed font-medium">
+                    I'm <span class="text-white font-bold underline decoration-blue-500 decoration-2 underline-offset-4">Xienia Powell</span>. Specialized in building automated, secure, and HIPAA-aligned cloud ecosystems that drive operational ROI.
+                </p>
+                
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <button onclick="copyEmail()" id="emailBtn" class="btn-hover flex items-center gap-3 px-10 py-5 bg-blue-600 rounded-2xl font-bold text-white shadow-xl shadow-blue-900/20 text-white">
+                        <i data-lucide="mail" class="w-5 h-5"></i> <span id="btnText">Copy Email</span>
+                    </button>
+                    <a href="#projects" class="flex items-center gap-3 px-10 py-5 bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-2xl font-bold transition-all text-slate-200">
+                        <i data-lucide="layers" class="w-5 h-5"></i> View Architecture
+                    </a>
+                </div>
+            </div>
+            
+            <div class="relative">
+                <div class="absolute -inset-6 bg-blue-500/20 blur-3xl rounded-full opacity-50"></div>
+                <div class="relative w-72 h-72 md:w-[450px] md:h-[450px] rounded-[2.5rem] overflow-hidden border border-slate-800 shadow-2xl transition-all duration-700 bg-slate-900/50">
+                    <img 
+                        src="headshot.jpeg" 
+                        alt="Xienia Powell" 
+                        class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-105 hover:scale-100"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                    >
+                    <div class="hidden absolute inset-0 items-center justify-center text-slate-700 text-center p-8">
+                        <i data-lucide="user" class="w-20 h-20 mb-4 opacity-20 text-white"></i>
+                        <p class="text-xs font-mono opacity-40 uppercase tracking-widest text-white">Rename your photo to<br>headshot.jpeg</p>
+                    </div>
+                </div>
+                <div class="absolute -bottom-4 -left-4 p-5 glass-card rounded-3xl hidden md:block">
+                    <div class="flex items-center gap-4 text-green-400">
+                        <div class="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center text-white">
+                            <i data-lucide="shield-check"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-slate-500 font-black uppercase tracking-widest">Specialization</p>
+                            <p class="text-sm font-bold text-white uppercase tracking-tighter">HIPAA Compliance Engineer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Spotlight -->
+    <section id="projects" class="py-32 px-6 bg-slate-900/10 reveal">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 text-white">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-2 bg-blue-500/10 rounded-lg text-blue-500"><i data-lucide="component"></i></div>
+                        <h2 class="text-sm font-black text-blue-500 uppercase tracking-[0.3em]">Engineering Spotlight</h2>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-black tracking-tight">CloudVault Architecture.</h2>
+                </div>
+                <div class="flex gap-4">
+                    <a href="https://partyrock.aws/u/xienia/hzuOrzEWE/CloudVault" target="_blank" class="flex items-center gap-3 px-8 py-4 bg-blue-600/10 border border-blue-500/30 rounded-2xl text-blue-400 font-black text-xs uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-all group text-white">
+                        Live System Simulator <i data-lucide="external-link" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="glass-card p-12 rounded-[3.5rem] border border-blue-500/20 relative group">
+                    <div class="absolute inset-0 bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-[3.5rem]"></div>
+                    <svg viewBox="0 0 400 300" class="w-full h-auto text-slate-400">
+                        <rect x="10" y="10" width="380" height="280" rx="15" fill="none" stroke="#1e293b" stroke-dasharray="5,5" />
+                        <rect x="40" y="60" width="320" height="200" rx="10" fill="rgba(59, 130, 246, 0.05)" stroke="#3b82f6" stroke-opacity="0.3" class="arch-node" />
+                        <circle cx="360" cy="40" r="15" fill="#1e293b" stroke="#3b82f6" stroke-width="1" />
+                        <rect x="120" y="100" width="160" height="120" rx="8" fill="#0f172a" stroke="#475569" class="arch-node" />
+                        <text x="165" y="125" fill="#f8fafc" font-size="11" font-weight="bold">EC2 HOST</text>
+                        <rect x="140" y="145" width="120" height="55" rx="4" fill="rgba(59, 130, 246, 0.1)" stroke="#3b82f6" />
+                        <text x="155" y="175" fill="#3b82f6" font-size="9" font-weight="bold">DOCKER CONTAINER</text>
+                        <path d="M340 180 Q340 170 320 170 Q300 170 300 180 L300 220 Q300 230 320 230 Q340 230 340 220 Z" fill="#1e293b" stroke="#3b82f6" />
+                        <text x="312" y="208" fill="#3b82f6" font-size="8">S3</text>
+                    </svg>
+                    <p class="text-center text-[10px] font-bold text-slate-600 uppercase tracking-widest mt-6 italic">Visualizing Infrastructure as Code (IaC)</p>
+                </div>
+
+                <div class="space-y-8 text-white">
+                    <h3 class="text-3xl font-black leading-tight italic">Optimizing <span class="text-blue-500">Cloud Spend</span> while Ensuring Compliance.</h3>
+                    
+                    <div class="grid grid-cols-1 gap-6">
+                        <div class="flex items-start gap-5 p-6 glass-card rounded-2xl border-l-4 border-l-blue-500">
+                            <div class="p-3 bg-blue-500/10 rounded-xl text-blue-500"><i data-lucide="trending-down"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1 uppercase text-xs tracking-widest">FinOps Optimization</h4>
+                                <p class="text-xs text-slate-500 leading-relaxed font-medium">Architected for cost-efficiency using AWS Lifecycle policies and burstable EC2 instance classes, resulting in a 35% reduction in potential idle compute costs.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-5 p-6 glass-card rounded-2xl border-l-4 border-l-green-500">
+                            <div class="p-3 bg-green-500/10 rounded-xl text-green-500"><i data-lucide="lock"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1 uppercase text-xs tracking-widest">Regulatory Security</h4>
+                                <p class="text-xs text-slate-500 leading-relaxed font-medium">Implemented encryption at rest (AES-256) and strict IAM boundaries to ensure system isolation aligned with HIPAA requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Stack -->
+    <section id="skills" class="py-32 px-6 reveal">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex items-center gap-3 mb-16 text-white">
+                <div class="p-2 bg-blue-500/10 rounded-lg text-blue-500"><i data-lucide="cpu"></i></div>
+                <h2 class="text-4xl font-black tracking-tight uppercase tracking-[0.2em]">Expertise.</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-white">
+                <div class="p-10 glass-card rounded-[2rem] border-blue-500/10 hover:border-blue-500/30 transition-all group">
+                    <h3 class="text-blue-400 font-bold mb-8 text-xs uppercase tracking-[0.2em]">DevOps</h3>
+                    <ul class="space-y-4 text-slate-300 font-medium text-sm">
+                        <li>Terraform (IaC)</li><li>Docker Containers</li><li>GitHub Actions CI/CD</li><li>Linux Systems</li>
+                    </ul>
+                </div>
+                <div class="p-10 glass-card rounded-[2rem] border-green-500/10 hover:border-green-500/30 transition-all group">
+                    <h3 class="text-green-400 font-bold mb-8 text-xs uppercase tracking-[0.2em]">Compliance</h3>
+                    <ul class="space-y-4 text-slate-300 font-medium text-sm">
+                        <li>HIPAA Standards</li><li>IAM Governance</li><li>KMS Encryption</li><li>Network ACLs</li>
+                    </ul>
+                </div>
+                <div class="p-10 glass-card rounded-[2rem] border-blue-500/10 hover:border-blue-500/30 transition-all group">
+                    <h3 class="text-blue-400 font-bold mb-8 text-xs uppercase tracking-[0.2em]">AWS Cloud</h3>
+                    <ul class="space-y-4 text-slate-300 font-medium text-sm">
+                        <li>VPC Networking</li><li>EC2/Auto-Scaling</li><li>S3 Lifecycle Mgmt</li><li>CloudWatch Logs</li>
+                    </ul>
+                </div>
+                <div class="p-10 glass-card rounded-[2rem] border-yellow-500/10 hover:border-yellow-500/30 transition-all group">
+                    <h3 class="text-yellow-400 font-bold mb-8 text-xs uppercase tracking-[0.2em]">Strategy</h3>
+                    <ul class="space-y-4 text-slate-300 font-medium text-sm">
+                        <li>FinOps / Budgeting</li><li>Tech Documentation</li><li>Agile / Scrum</li><li>Incident Mgmt</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional History -->
+    <section id="experience" class="py-32 px-6 reveal">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-24">
+            <div class="lg:col-span-2 space-y-16 text-white">
+                <div class="flex items-center gap-3 mb-12">
+                    <div class="p-2 bg-blue-500/10 rounded-lg text-blue-500"><i data-lucide="milestone"></i></div>
+                    <h2 class="text-3xl font-black uppercase tracking-widest">History.</h2>
+                </div>
+                
+                <div class="space-y-16">
+                    <div class="relative pl-10 border-l border-slate-800">
+                        <div class="absolute w-3 h-3 bg-blue-500 rounded-full -left-[6.5px] top-2"></div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-black tracking-tight text-white">Middle School Lead Educator</h3>
+                                <p class="text-blue-400 font-bold uppercase tracking-widest text-[10px]">Matchbook Learning School</p>
+                            </div>
+                            <span class="text-[10px] font-mono text-slate-500">2023 – 2025</span>
+                        </div>
+                        <p class="text-slate-400 text-sm italic">Administered SaaS infrastructure for 100+ users, reducing platform errors through documented SOPs and standardized protocols.</p>
+                    </div>
+
+                    <div class="relative pl-10 border-l border-slate-800 text-white">
+                        <div class="absolute w-3 h-3 bg-slate-800 rounded-full -left-[6.5px] top-2"></div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-black tracking-tight text-white">Operations Lead</h3>
+                                <p class="text-blue-400 font-bold uppercase tracking-widest text-[10px]">BodyNfaceRX Spa</p>
+                            </div>
+                            <span class="text-[10px] font-mono text-slate-500">2018 – 2025</span>
+                        </div>
+                        <p class="text-slate-400 text-sm italic">Architected digital scheduling systems and enforced strict RBAC to ensure HIPAA compliance across operations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Credentials Section -->
+            <div class="space-y-12 text-white">
+                <div class="flex items-center gap-3 mb-12">
+                    <div class="p-2 bg-blue-500/10 rounded-lg text-blue-500"><i data-lucide="award"></i></div>
+                    <h2 class="text-3xl font-black uppercase tracking-widest text-slate-500">Credentials.</h2>
+                </div>
+                
+                <div class="space-y-8">
+                    <div class="p-8 glass-card rounded-3xl border-l-4 border-l-blue-500">
+                        <p class="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-3">AWS Engineering</p>
+                        <h4 class="text-xl font-black text-white leading-tight">AWS re/Start Program</h4>
+                        <p class="text-slate-400 text-xs mt-2">Per Scholas | Expected 2026</p>
+                    </div>
+                    
+                    <div class="p-8 glass-card rounded-3xl">
+                        <p class="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-3">University</p>
+                        <h4 class="text-xl font-black text-white leading-tight">BS, Business Administration, Healthcare Management</h4>
+                        <p class="text-slate-400 text-xs mt-2">Western Governors University</p>
+                        <div class="mt-4 inline-flex items-center gap-2 text-[10px] font-black text-green-500 bg-green-500/5 px-3 py-1 rounded-full uppercase">
+                            <i data-lucide="check" class="w-3 h-3"></i> Graduated
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="pt-40 pb-20 px-6 bg-slate-950 border-t border-slate-900 relative">
+        <div class="max-w-6xl mx-auto text-center text-white">
+            <h2 class="text-5xl md:text-8xl font-black mb-16 italic tracking-tighter">Ready to <span class="text-blue-500 underline decoration-blue-500/30">Scale.</span></h2>
+            
+            <div class="flex flex-wrap justify-center gap-8 mb-20 text-white">
+                <a href="https://linkedin.com/in/xieniap" target="_blank" class="flex items-center gap-4 p-6 glass-card rounded-[2rem] group hover:bg-blue-600 transition-all transform hover:-translate-y-1">
+                    <i data-lucide="linkedin" class="w-8 h-8 group-hover:text-white"></i>
+                    <div class="text-left hidden md:block">
+                        <p class="text-[10px] uppercase font-bold text-slate-500 group-hover:text-white/70 tracking-widest">Connect</p>
+                        <p class="font-bold text-white uppercase tracking-tighter">LinkedIn Profile</p>
+                    </div>
+                </a>
+                <button onclick="copyEmail()" class="flex items-center gap-4 p-6 glass-card rounded-[2rem] group hover:bg-blue-600 transition-all transform hover:-translate-y-1 text-left text-white">
+                    <i data-lucide="mail" class="w-8 h-8 group-hover:text-white"></i>
+                    <div>
+                        <p class="text-[10px] uppercase font-bold text-slate-500 group-hover:text-white/70 tracking-widest">Email</p>
+                        <p class="font-bold text-white uppercase tracking-tighter">xieniap@gmail.com</p>
+                    </div>
+                </button>
+            </div>
+            
+            <div class="pt-20 border-t border-slate-900 flex flex-col md:flex-row items-center justify-between gap-10 text-white">
+                <p class="text-slate-600 text-[10px] font-black uppercase tracking-[0.4em]">
+                    © <span id="year"></span> XIENIA POWELL // Cloud & DevOps Engineer
+                </p>
+                
+                <div class="flex items-center gap-10 text-slate-500 text-xs font-mono uppercase tracking-[0.2em]">
+                    <span class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-blue-500/50 text-white"></i> Indianapolis, IN</span>
+                    <a href="#" target="_blank" class="flex items-center gap-2 underline underline-offset-4 hover:text-blue-400 transition-colors text-white">
+                        <i data-lucide="file-text" class="w-4 h-4 text-blue-500/50 text-white"></i> Full Resume (PDF)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        function copyEmail() {
+            const email = "xieniap@gmail.com";
+            const btnText = document.getElementById('btnText');
+            const btn = document.getElementById('emailBtn');
+            
+            navigator.clipboard.writeText(email).then(() => {
+                const originalText = btnText.innerText;
+                btnText.innerText = "Email Copied!";
+                btn.classList.replace('bg-blue-600', 'bg-green-600');
+                
+                setTimeout(() => {
+                    btnText.innerText = originalText;
+                    btn.classList.replace('bg-green-600', 'bg-blue-600');
+                }, 2500);
+            });
+        }
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>
